@@ -60,7 +60,7 @@ class HighlightView {
         mOutlineCircleColor = outlineCircleColor;
     }
 
-    private void init() {
+    /*private void init() {
         android.content.res.Resources resources = mContext.getResources();
         mResizeDrawableWidth =
                 resources.getDrawable(R.drawable.camera_crop_width);
@@ -68,7 +68,7 @@ class HighlightView {
                 resources.getDrawable(R.drawable.camera_crop_height);
         mResizeDrawableDiagonal =
                 resources.getDrawable(R.drawable.indicator_autocrop);
-    }
+    }*/
 
     boolean mIsFocused;
     boolean mHidden;
@@ -116,12 +116,12 @@ class HighlightView {
             canvas.restore();
             canvas.drawPath(path, mOutlinePaint);
 
-            if (mMode == ModifyMode.Grow) {
+            /*if (mMode == ModifyMode.Grow) {
                 if (mCircle) {
                     int width  = mResizeDrawableDiagonal.getIntrinsicWidth();
                     int height = mResizeDrawableDiagonal.getIntrinsicHeight();
 
-                    int d  = (int) Math.round(Math.cos(/*45deg*/Math.PI / 4D)
+                    int d  = (int) Math.round(Math.cos(Math.PI / 4D)
                             * (mDrawRect.width() / 2D));
                     int x  = mDrawRect.left
                             + (mDrawRect.width() / 2) + d - width / 2;
@@ -155,27 +155,27 @@ class HighlightView {
                                                    yMiddle - widthHeight,
                                                    left + widthWidth,
                                                    yMiddle + widthHeight);
-                    mResizeDrawableWidth.draw(canvas);
+                    //mResizeDrawableWidth.draw(canvas);
 
                     mResizeDrawableWidth.setBounds(right - widthWidth,
                                                    yMiddle - widthHeight,
                                                    right + widthWidth,
                                                    yMiddle + widthHeight);
-                    mResizeDrawableWidth.draw(canvas);
+                    //mResizeDrawableWidth.draw(canvas);
 
                     mResizeDrawableHeight.setBounds(xMiddle - heightWidth,
                                                     top - heightHeight,
                                                     xMiddle + heightWidth,
                                                     top + heightHeight);
-                    mResizeDrawableHeight.draw(canvas);
+                    //mResizeDrawableHeight.draw(canvas);
 
                     mResizeDrawableHeight.setBounds(xMiddle - heightWidth,
                                                     bottom - heightHeight,
                                                     xMiddle + heightWidth,
                                                     bottom + heightHeight);
-                    mResizeDrawableHeight.draw(canvas);
+                    //mResizeDrawableHeight.draw(canvas);
                 }
-            }
+            }*/
         }
     }
 
@@ -397,7 +397,7 @@ class HighlightView {
         mOutlinePaint.setAntiAlias(true);
 
         mMode = ModifyMode.None;
-        init();
+        //init();
     }
 
     enum ModifyMode { None, Move, Grow }
@@ -413,9 +413,9 @@ class HighlightView {
     private float mInitialAspectRatio;
     private boolean mCircle = false;
 
-    private Drawable mResizeDrawableWidth;
+    /*private Drawable mResizeDrawableWidth;
     private Drawable mResizeDrawableHeight;
-    private Drawable mResizeDrawableDiagonal;
+    private Drawable mResizeDrawableDiagonal;*/
 
     private final Paint mFocusPaint = new Paint();
     private final Paint mNoFocusPaint = new Paint();
